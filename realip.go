@@ -65,7 +65,7 @@ func (r *RealIPOverWriter) ServeHTTP(rw http.ResponseWriter, req *http.Request) 
 	}
 
 	req.Header.Set(xRealIP, realIP)
-	if realIP != nil {
+	if len(realIP) > 0 {
 		req.Header.Set(xForwardedFor, realIP)
 	}
 
